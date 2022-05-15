@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
      return render_template('index2.html')
 
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
 if __name__ == '__main__':
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
     ssl_context.load_cert_chain(certfile='/etc/ssl/songjaekyung.crt', keyfile='/etc/ssl/songjaekyung.key', password='10244')
