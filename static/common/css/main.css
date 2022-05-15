@@ -87,20 +87,20 @@ html, body, .wrapper, .container, .content, .section-area, .section {height:100%
 .main-wrap [class*='bg-main'] {background-repeat:no-repeat; background-size:cover; background-position:center center;}
 @media screen and (orientation: landscape) {
 	/*.main-wrap [class*='bg-main'] {background-repeat:no-repeat; background-size:cover; background-position:center center;}*/
-	.main-wrap .bg-main11 {background-image:url(/static/images/main/bg_mainvisual11.jpg);}
-	.main-wrap .bg-main12 {background-image:url(/static/images/main/bg_mainvisual12.jpg); background-color:#191817;}
-	.main-wrap .bg-main13 {background-image:url(/static/images/main/bg_mainvisual13.jpg);}
-	.main-wrap .bg-main14 {background-image:url(/static/images/main/bg_mainvisual14.jpg);}
-	.main-wrap .bg-main15 {background-image:url(/static/images/main/bg_mainvisual15.jpg);}
-	.main-wrap .bg-main16 {background-image:url(/static/images/main/bg_mainvisual16.jpg);}
-	.main-wrap .bg-main17 {background-image:url(/static/images/main/bg_mainvisual17.jpg);}
-	.main-wrap .bg-main21 {background-image:url(/static/images/main/bg_mainvisual21.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
-	.main-wrap .bg-main22 {background-image:url(/static/images/main/bg_mainvisual22.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
-	.main-wrap .bg-main23 {background-image:url(/static/images/main/bg_mainvisual23.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
-	.main-wrap .bg-main24 {background-image:url(/static/images/main/bg_mainvisual24.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
-	.main-wrap .bg-main25 {background-image:url(/static/images/main/bg_mainvisual25.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
-	.main-wrap .bg-main3 {background-image:url(/static/images/main/bg_mainvisual3.jpg);}
-	.main-wrap .bg-main4 {background-image:url(/static/images/main/bg_mainvisual4.jpg); background-position:right bottom; background-size:auto calc(100% + 2rem); background-color:#fbfbfb;}
+	.main-wrap .bg-main11 {background-image:url(static/images/main/bg_mainvisual11.jpg);}
+	.main-wrap .bg-main12 {background-image:url(static/images/main/bg_mainvisual12.jpg); background-color:#191817;}
+	.main-wrap .bg-main13 {background-image:url(static/images/main/bg_mainvisual13.jpg);}
+	.main-wrap .bg-main14 {background-image:url(static/images/main/bg_mainvisual14.jpg);}
+	.main-wrap .bg-main15 {background-image:url(static/images/main/bg_mainvisual15.jpg);}
+	.main-wrap .bg-main16 {background-image:url(static/images/main/bg_mainvisual16.jpg);}
+	.main-wrap .bg-main17 {background-image:url(static/images/main/bg_mainvisual17.jpg);}
+	.main-wrap .bg-main21 {background-image:url(static/images/main/bg_mainvisual21.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
+	.main-wrap .bg-main22 {background-image:url(static/images/main/bg_mainvisual22.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
+	.main-wrap .bg-main23 {background-image:url(static/images/main/bg_mainvisual23.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
+	.main-wrap .bg-main24 {background-image:url(static/images/main/bg_mainvisual24.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
+	.main-wrap .bg-main25 {background-image:url(static/images/main/bg_mainvisual25.png); background-color:#fff; background-position:-10vw 70%; background-size:50% auto;}
+	.main-wrap .bg-main3 {background-image:url(static/images/main/bg_mainvisual3.jpg);}
+	.main-wrap .bg-main4 {background-image:url(static/images/main/bg_mainvisual4.jpg); background-position:right bottom; background-size:auto calc(100% + 2rem); background-color:#fbfbfb;}
 	.main-wrap .bg-main6 {background-color:#f2f2f2;}
 	.main-sec2 .bg-area {position:absolute; left:0; top:0; right:0; bottom:0; z-index:10;}
 }
@@ -122,21 +122,21 @@ html, body, .wrapper, .container, .content, .section-area, .section {height:100%
 
 @media screen and (min-width: 1025px) and (orientation: portrait) {
 	.main-wrap [class*='bg-main'] {background-repeat:no-repeat; background-size:cover; background-position:center center;}
-	.main-wrap .bg-main11 {background-image:url(/static/images/main/bg_mainvisual11.jpg);}
-	.main-wrap .bg-main12 {background-image:url(/static/images/main/bg_mainvisual12.jpg); background-color:#191817;}
-	.main-wrap .bg-main13 {background-image:url(/static/images/main/bg_mainvisual13.jpg);}
-	.main-wrap .bg-main14 {background-image:url(/static/images/main/bg_mainvisual14.jpg);}
-	.main-wrap .bg-main15 {background-image:url(/static/images/main/bg_mainvisual15.jpg);}
-	.main-wrap .bg-main16 {background-image:url(/static/images/main/bg_mainvisual16.jpg);}
-	.main-wrap .bg-main17 {background-image:url(/static/images/main/bg_mainvisual17.jpg);}
-	.main-wrap .bg-main21 {background-image:url(/static/images/main/bg_mainvisual21.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
-	.main-wrap .bg-main22 {background-image:url(/static/images/main/bg_mainvisual22.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
-	.main-wrap .bg-main23 {background-image:url(/static/images/main/bg_mainvisual23.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
-	.main-wrap .bg-main24 {background-image:url(/static/images/main/bg_mainvisual24.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
-	.main-wrap .bg-main25 {background-image:url(/static/images/main/bg_mainvisual25.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
-	.main-wrap .bg-main3 {background-image:url(/static/images/main/bg_mainvisual3.jpg);}
-	.main-wrap .bg-main4 {background-image:url(/static/images/main/bg_mainvisual4.jpg); background-position:right bottom; background-size:auto calc(100% + 2rem); background-color:#fbfbfb;}
-	.main-wrap .bg-main5 {background-image:url(/static/images/main/bg_mainvisual5.jpg); background-position:right bottom; background-size:100% calc(100% - 2rem); background-color:#15141c;}
+	.main-wrap .bg-main11 {background-image:url(static/images/main/bg_mainvisual11.jpg);}
+	.main-wrap .bg-main12 {background-image:url(static/images/main/bg_mainvisual12.jpg); background-color:#191817;}
+	.main-wrap .bg-main13 {background-image:url(static/images/main/bg_mainvisual13.jpg);}
+	.main-wrap .bg-main14 {background-image:url(static/images/main/bg_mainvisual14.jpg);}
+	.main-wrap .bg-main15 {background-image:url(static/images/main/bg_mainvisual15.jpg);}
+	.main-wrap .bg-main16 {background-image:url(static/images/main/bg_mainvisual16.jpg);}
+	.main-wrap .bg-main17 {background-image:url(static/images/main/bg_mainvisual17.jpg);}
+	.main-wrap .bg-main21 {background-image:url(static/images/main/bg_mainvisual21.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
+	.main-wrap .bg-main22 {background-image:url(static/images/main/bg_mainvisual22.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
+	.main-wrap .bg-main23 {background-image:url(static/images/main/bg_mainvisual23.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
+	.main-wrap .bg-main24 {background-image:url(static/images/main/bg_mainvisual24.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
+	.main-wrap .bg-main25 {background-image:url(static/images/main/bg_mainvisual25.png); background-color:#fff; background-position:-10vw 70%; background-size:45% auto;}
+	.main-wrap .bg-main3 {background-image:url(static/images/main/bg_mainvisual3.jpg);}
+	.main-wrap .bg-main4 {background-image:url(static/images/main/bg_mainvisual4.jpg); background-position:right bottom; background-size:auto calc(100% + 2rem); background-color:#fbfbfb;}
+	.main-wrap .bg-main5 {background-image:url(static/images/main/bg_mainvisual5.jpg); background-position:right bottom; background-size:100% calc(100% - 2rem); background-color:#15141c;}
 
 	.main-wrap .bg-main6 {background-color:#f2f2f2;}
 	.main-sec2 .bg-area {position:absolute; left:0; top:0; right:0; bottom:0; z-index:10;}
