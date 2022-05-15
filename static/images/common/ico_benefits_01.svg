@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 85.04 85.04" style="enable-background:new 0 0 85.04 85.04;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#050303;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#050303;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:#FFFFFF;stroke:#00A1DF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g>
+	<path class="st0" d="M72.92,67.3h-60.8c-1.57,0-2.83-1.27-2.83-2.83v-35.9c0-1.57,1.27-2.83,2.83-2.83h60.8
+		c1.57,0,2.83,1.27,2.83,2.83v35.9C75.76,66.04,74.49,67.3,72.92,67.3z"/>
+	<path class="st1" d="M35.28,25.47v-4.9c0-1.57,1.27-2.83,2.83-2.83h8.8c1.57,0,2.83,1.27,2.83,2.83v4.9"/>
+	<g>
+		<line class="st1" x1="62.52" y1="26.57" x2="62.52" y2="66.47"/>
+		<line class="st1" x1="22.52" y1="26.57" x2="22.52" y2="66.47"/>
+	</g>
+	
+		<rect x="54.02" y="40.11" transform="matrix(0.959 -0.2834 0.2834 0.959 -10.0112 18.8365)" class="st2" width="12.18" height="7.84"/>
+	<polygon class="st2" points="40.45,56.34 48.88,52.32 50.73,61.56 	"/>
+	<circle class="st2" cx="43.35" cy="40.69" r="4.84"/>
+</g>
+</svg>

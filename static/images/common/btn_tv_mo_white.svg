@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.0" id="Isolation_Mode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 85.04 85.04" style="enable-background:new 0 0 85.04 85.04;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#00A1DF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g>
+	<rect x="23.28" y="30.2" class="st0" width="39.78" height="24.72"/>
+	<g>
+		<g>
+			<line class="st0" x1="43.28" y1="30.2" x2="34.75" y2="21.67"/>
+		</g>
+		<g>
+			<line class="st0" x1="43.07" y1="30.2" x2="51.6" y2="21.67"/>
+		</g>
+	</g>
+	<polyline class="st0" points="47.82,54.95 47.82,61.57 38.53,61.57 38.53,54.95 	"/>
+	<line class="st0" x1="52.82" y1="61.57" x2="33.53" y2="61.57"/>
+	<polygon class="st1" points="40.5,37.4 47.85,42.76 40.5,48.11 	"/>
+</g>
+</svg>

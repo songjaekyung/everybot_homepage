@@ -1,0 +1,12 @@
+<svg id="ico_close_white.svg" xmlns="http://www.w3.org/2000/svg" width="15.75" height="15.719" viewBox="0 0 15.75 15.719">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M1512.37,37.866a0.8,0.8,0,0,1,1.13,0l14.14,14.142a0.787,0.787,0,0,1,0,1.131,0.8,0.8,0,0,1-1.13,0L1512.37,39A0.8,0.8,0,0,1,1512.37,37.866Z" transform="translate(-1512.16 -37.656)"/>
+  <path class="cls-1" d="M1527.67,37.866a0.8,0.8,0,0,0-1.13,0l-14.15,14.142a0.8,0.8,0,0,0,1.14,1.131L1527.67,39A0.8,0.8,0,0,0,1527.67,37.866Z" transform="translate(-1512.16 -37.656)"/>
+</svg>
