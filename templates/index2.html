@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta property="og:image" content="http://www.everybot.co.kr/images/visual/visual_company.jpg" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta property="og:title" content="EVERYBOT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EVERYBOT" />
+    <meta property="og:url" content="everybot.co.kr" />
+    <meta property="og:description" content="대한민국 대표 홈서비스 로봇 전문기업, 로봇청소기, 로봇공기청정기" />
+    <meta property="og:image" content="http://www.everybot.co.kr/images/visual/visual_company.jpg" />
+    <title>EVERYBOT</title>
+    <span itemscope="" itemtype="http://schema.org/Organization">
+<link itemprop="url" href="http://www.everybot.co.kr">
+<a itemprop="sameAs" href="https://blog.naver.com/everybot"></a>
+<a itemprop="sameAs" href="https://www.instagram.com/everybot_official/"></a>
+<a itemprop="sameAs" href="https://www.youtube.com/channel/UC1m9bsSnFnjlTrnk7B2o0fA"></a>
+</span>
+    <title>EVERYBOT</title>
+
+    <link rel="stylesheet" href="static/common/css/base.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/common.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/ui.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/layout.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/content.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/libs/plugins.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/libs/animate.css?time=20191014_1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="static/images/icons/android-chrome-256x256.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/images/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/icons/favicon-32x32.png">
+    <link rel="mask-icon" href="static/images/icons/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="static/common/js/libs/EasePack.js"></script>
+    <script src="static/common/js/libs/TweenMax.js"></script>
+    <script src="static/common/js/pub/pub_device.js"></script>
+    <script src="static/common/js/pub/pub_plugins.js"></script>
+    <script src="static/common/js/pub/pub_utility.js"></script>
+    <script src="static/common/js/pub/pub_ui.js?time=20201104_1"></script>
+    <!--[if lt IE 9]>
+    <script src="static/common/js/libs/html5shiv-printshiv.js">
+    <![endif]-->
+    <link rel="stylesheet" href="static/common/css/main.css">
+    <script type="text/javascript">
+        //<!--
+        $(function(){
+            ui.fullpage();
+            ui.swiper.mainProfile();
+            ui.swiper.mainStory();
+
+            var popSlideCount = $("#layerPopup .swiper-slide").length;
+            //console.log(popSlideCount);
+            if (popSlideCount > 1){
+                ui.swiper.mainPop();
+            }
+            if (popSlideCount === 1){
+                $("#layerPopup .swiper-button-next").hide();
+                $("#layerPopup .swiper-button-prev").hide();
+            }
+        })
+        //-->
+    </script>
+    <script type="text/javascript">
+        //<!--
+        function createCalendar(){
+        }
+
+        var eventData=[]
+        var nowY;
+        var nowM;
+        var ym;
+        var getProduct=0;
+
+        var calendar ;
+        var setCalandar = function(eventData,ym){
+            var initOption = {};
+
+            if( $(window).width() < 768 ){
+                initOption.defaultView = 'listMonth';
+                initOption.contentHeight = 338;
+            } else{
+                initOption.defaultView = 'dayGridMonth';
+                initOption.contentHeight = 645;
+            }
+
+            var calendarEl = document.getElementById('calendar');
+
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,title,next',
+                    center: '',
+                    right: ''
+                },
+                initialView: initOption.defaultView,
+                //contentHeight: "auto",
+                contentHeight: initOption.contentHeight,
+                locale : "ko",
+                initialDate: ym+'-01',
+                navLinks: false,
+                editable: false,
+                eventLimit: true,
+                dayMaxEvents: true, // allow "more" link when too many events
+                selectable: false,
+                events: eventData,
+                eventDidMount: function(info) {
+                    //console.log(info.event.extendedProps);
+                    // {}
+                }
+            });
+
+            calendar.render();
+        }
+
+
+
+
+        $(document).ready(function(){
+            var dateY = new Date().getFullYear();
+            nowY = dateY;
+
+            var monthD = new Date().getMonth() + 1;
+            nowM = monthD;
+
+            if(monthD<10){
+                monthD = "0"+monthD;
+            }
+            ym = dateY+"-"+monthD;
+
+            $.ajax({
+                url : "/homeShop.asp",
+                aync : false,
+                dataType : "json",
+                data : {
+                    getYear : dateY,
+                    getMonth : monthD,
+                    getProduct : getProduct,
+                    sType : 1
+                },
+                success : function(result){
+                    eventData = result;
+                    calendar=null;
+                    setCalandar(eventData,ym);
+                }
+            })
+
+
+            var wm ;
+            var loadCal=false;
+
+
+            $('#scheduleFilter').change(function(){
+                var val = $(this).val();
+                getProduct= val;
+
+                $.ajax({
+                    url : "/homeShop.asp",
+                    aync : false,
+                    dataType : "json",
+                    data : {
+                        getYear : dateY,
+                        getMonth : monthD,
+                        getProduct : getProduct,
+                        sType : 1
+                    },
+                    success : function(result){
+                        eventData = result;
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                    }
+                })
+            });
+
+            if($(window).width()<768){
+                wm ="m";
+            }else{
+                wm ="w";
+            }
+
+            $(window).resize(function(){
+                if( $(window).width() < 768 ){
+                    if(wm=="w"){
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                        wm="m";
+                    }
+                } else {
+                    if(wm=="m"){
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                        wm="w";
+                    }
+                }
+            });
+
+        });
+
+
+
+
+
+        //-->
+    </script>
+</head>
+<body class="main-body theme-dark">
+<div class="wrapper">
+    <!-- s: SkipNav -->
+    <div class="skipNav">
+        <a href="#content">본문 바로가기</a>
+    </div>
+    <!-- e: SkipNav -->
+
+    <!-- s: Header -->
+    <div id="loading"></div>
+    <header class="header">
+        <div class="in-sec">
+            <div class="drawer-area">
+                <button type="button" class="btn btn-drawer" aria-controls="sidebar" aria-expanded="false" onclick="ui.sidebar('sidebar', 'open')"><span><i class="ico">Sidebar 열기</i></span></button>
+            </div>
+            <div class="logo-area">
+                <h1 class="logo"><a href="/main.asp"><span role="text">EVERYBOT</span></a></h1>
+            </div>
+
+            <!-- s: GNB -->
+            <div class="gnb-area">
+                <nav class="gnb">
+                    <ul>
+                        <li class="has-expand">
+                            <a href="/pages/everybot/introduce1.asp">에브리봇</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/everybot/technic1.asp">기술력</a></li>
+                                    <li><a href="/pages/everybot/rnd1.asp">연구개발</a></li>
+                                    <li><a href="/pages/everybot/introduce1.asp">회사소개</a></li>
+                                    <li><a href="/pages/recruit/recruit1.asp">인재채용</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-expand">
+                            <a href="/pages/product/product_all.asp">제품</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/product/water_cleaners1.asp" class="no-active">로봇물걸레청소기</a>
+                                        <div class="node3-menu">
+                                            <ul>
+                                                <li><a href="/pages/product/water_cleaners4.asp">쓰리스핀</a></li>
+                                                <!-- <li><a href="https://www.everybotmall.com/goods/goods_view.php?goodsNo=1000000151#detail_top" target="_blank">쓰리스핀</a></li> -->
+                                                <li><a href="/pages/product/water_cleaners3.asp">엣지</a></li>
+                                                <li><a href="/pages/product/water_cleaners2.asp">RS700</a></li>
+                                                <li><a href="/pages/product/water_cleaners1.asp">RS500N</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/pages/product/normal_cleaners3.asp" class="no-active">로봇청소기</a>
+                                        <div class="node3-menu">
+                                            <ul>
+                                                <li><a href="/pages/product/normal_cleaners3.asp">3i</a></li>
+                                                <li><a href="/pages/product/normal_cleaners4.asp">3iPOP</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-expand">
+                            <a href="https://everybot.irpage.co.kr" target="_blank">투자정보</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li>
+                                        <a href="https://everybot.irpage.co.kr" target="_blank">투자정보</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <a href="/pages/invest/money_list.asp">투자정보</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/invest/money_list.asp">경영정보</a></li>
+                                    <li class="dv-pc-only"><a href="/pages/invest/stock_list.asp">주가정보</a></li>
+                                    <li><a href="/pages/invest/issue_list.asp">공시현황</a></li>
+                                    <li><a href="/pages/invest/ir_list.asp">투자자 공고사항</a></li>
+                                </ul>
+                            </div>
+                            -->
+                        </li>
+                        <li class="has-expand">
+                            <a href="/pages/newsroom/notice_list.asp">뉴스룸</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/newsroom/notice_list.asp">공지사항</a></li>
+                                    <li><a href="/pages/newsroom/news_list.asp">에브리봇 소식</a></li>
+                                    <li><a href="/pages/newsroom/promotion_list.asp">홍보관</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-expand">
+                            <a href="/pages/cs/shop_search.asp">고객지원</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/cs/shop_search.asp">매장찾기</a></li>
+                                    <li><a href="/pages/cs/cs1.asp">사용가이드</a>
+                                    <li><a href="/pages/cs/faq.asp">FAQ</a></li>
+                                    <li><a href="/pages/cs/as.asp">A/S접수</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- e: GNB -->
+
+            <div class="unb-area">
+                <button type="button" class="btn-tv-schedule popup-opener" aria-controls="popupSchedule" aria-haspopup="dialog" title="홈쇼핑일정"></button>
+                <a href="http://www.everybotmall.com/" target="_blank" class="unb-shop" title="새창열기">
+                    <i class="ico ico-buy"></i>
+                    <span class="label-txt">쇼핑몰</span>
+                    <span class="label-ico"><i class="ico ico-go"></i></span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript">
+        window._rblq = window._rblq || [];
+        _rblq.push(['setVar','cuid','16214e06-5fc9-4ca4-a0ec-3e14fd3d7d56']);
+        _rblq.push(['setVar','device','PW']);
+        _rblq.push(['track','visit']);
+        (function(s,x){s=document.createElement('script');s.type='text/javascript';
+            s.async=true;s.defer=true;s.src=(('https:'==document.location.protocol)?'https':'http')+
+                '://assets.recobell.io/rblc/js/rblc-apne1.min.js';;
+            x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();
+    </script>
+
+    <script type="text/javascript">
+        <!--
+        function createCalendar(){
+        }
+
+        var eventData=[]
+        var nowY;
+        var nowM;
+        var ym;
+        var getProduct=0;
+
+        var calendar ;
+        var setCalandar = function(eventData,ym){
+            var initOption = {};
+
+            if( $(window).width() < 768 ){
+                initOption.defaultView = 'listMonth';
+                initOption.contentHeight = 338;
+            } else{
+                initOption.defaultView = 'dayGridMonth';
+                initOption.contentHeight = 645;
+            }
+
+            var calendarEl = document.getElementById('calendar');
+
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,title,next',
+                    center: '',
+                    right: ''
+                },
+                initialView: initOption.defaultView,
+                //contentHeight: "auto",
+                contentHeight: initOption.contentHeight,
+                locale : "ko",
+                initialDate: ym+'-01',
+                navLinks: false,
+                editable: false,
+                eventLimit: true,
+                dayMaxEvents: true, // allow "more" link when too many events
+                selectable: false,
+                events: eventData,
+                eventDidMount: function(info) {
+                    //console.log(info.event.extendedProps);
+                    // {}
+                }
+            });
+
+            calendar.render();
+        }
+
+
+
+
+        $(document).ready(function(){
+            var dateY = new Date().getFullYear();
+            nowY = dateY;
+
+            var monthD = new Date().getMonth() + 1;
+            nowM = monthD;
+
+            if(monthD<10){
+                monthD = "0"+monthD;
+            }
+            ym = dateY+"-"+monthD;
+
+            $.ajax({
+                url : "/homeShop.asp",
+                aync : false,
+                dataType : "json",
+                data : {
+                    getYear : dateY,
+                    getMonth : monthD,
+                    getProduct : getProduct,
+                    sType : 1
+                },
+                success : function(result){
+                    eventData = result;
+                    calendar=null;
+                    setCalandar(eventData,ym);
+                }
+            })
+
+
+            var wm ;
+            var loadCal=false;
+
+
+            $('#scheduleFilter').change(function(){
+                var val = $(this).val();
+                getProduct= val;
+
+                $.ajax({
+                    url : "/homeShop.asp",
+                    aync : false,
+                    dataType : "json",
+                    data : {
+                        getYear : dateY,
+                        getMonth : monthD,
+                        getProduct : getProduct,
+                        sType : 1
+                    },
+                    success : function(result){
+                        eventData = result;
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                    }
+                })
+            });
+
+            if($(window).width()<768){
+                wm ="m";
+            }else{
+                wm ="w";
+            }
+
+            $(window).resize(function(){
+                if( $(window).width() < 768 ){
+                    if(wm=="w"){
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                        wm="m";
+                    }
+                } else {
+                    if(wm=="m"){
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                        wm="w";
+                    }
+                }
+            });
+
+        });
+
+
+
+
+
+        //-->
+    </script>
+    <!-- e: Header -->
+
+    <!-- s: Aside -->
+    <!-- s: Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <p class="signature">EVERYDAY, EVERYBOT</p>
+            <p class="logo"><a href="/main.asp">Everybot</a></p>
+        </div>
+        <div class="sidebar-container">
+            <nav class="mnb">
+                <ul>
+                    <li class="has-expand is-active">
+                        <a href="/pages/everybot/introduce1.asp">에브리봇</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/everybot/technic1.asp">기술력</a></li>
+                                <li><a href="/pages/everybot/rnd1.asp">연구개발</a></li>
+                                <li><a href="/pages/everybot/introduce1.asp">회사소개</a></li>
+                                <li><a href="/pages/recruit/recruit1.asp">인재채용</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-expand">
+                        <a href="/pages/product/product_all.asp">제품</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/product/product_all.asp">제품전체보기</a></li>
+                                <li><a href="/pages/product/water_cleaners1.asp" class="no-active">물걸레로봇청소기</a>
+                                    <div class="node3-menu">
+                                        <ul>
+                                            <li><a href="/pages/product/water_cleaners4.asp">쓰리스핀</a></li>
+                                            <!-- <li><a href="https://m.everybotmall.com/goods/goods_view.php?goodsNo=1000000151#detail_top" target="_blank">쓰리스핀</a></li> -->
+                                            <li><a href="/pages/product/water_cleaners3.asp">엣지</a></li>
+                                            <li><a href="/pages/product/water_cleaners2.asp">RS700</a></li>
+                                            <li><a href="/pages/product/water_cleaners1.asp">RS500N</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="/pages/product/normal_cleaners3.asp" class="no-active">로봇청소기</a>
+                                    <div class="node3-menu">
+                                        <ul>
+                                            <li><a href="/pages/product/normal_cleaners3.asp">3i</a></li>
+                                            <li><a href="/pages/product/normal_cleaners4.asp" target="_balnk">3iPOP</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-expand">
+                        <!-- <a href="/pages/invest/ir_list.asp">투자정보</a> -->
+                        <a href="https://everybot.irpage.co.kr">투자정보</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="https://everybot.irpage.co.kr" target="_blank">투자정보</a></li>
+                            </ul>
+                        </div>
+                        <!-- <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/invest/money_list.asp">경영정보</a></li>
+                                <li class="dv-pc-only"><a href="/pages/invest/stock_list.asp">주가정보</a></li>
+                                <li><a href="/pages/invest/issue_list.asp">공시현황</a></li>
+                                <li><a href="/pages/invest/ir_list.asp">투자자 공고사항</a></li>
+                            </ul>
+                        </div> -->
+                    </li>
+                    <li class="has-expand">
+                        <a href="/pages/newsroom/notice_list.asp">뉴스룸</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/newsroom/notice_list.asp">공지사항</a></li>
+                                <li><a href="/pages/newsroom/news_list.asp">에브리봇 소식</a></li>
+                                <li><a href="/pages/newsroom/promotion_list.asp">홍보관</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-expand">
+                        <a href="/pages/cs/faq.asp">고객지원</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/cs/shop_search.asp">매장찾기</a></li>
+                                <li><a href="/pages/cs/cs1.asp">사용가이드</a>
+                                <li><a href="/pages/cs/faq.asp">FAQ</a>
+                                    <!--
+                                    <div class="node3-menu">
+                                        <ul>
+                                            <li><a href="/pages/cs/cs1.asp">가이드</a></li>
+                                            <li><a href="/pages/cs/cs2.asp">메뉴얼</a></li>
+                                        </ul>
+                                    </div>
+                                    -->
+                                </li>
+                                <li><a href="/pages/cs/as.asp">A/S접수</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-closer">
+            <button type="button" class="btn" title="사이드메뉴 닫기" aria-controls="sidebar" aria-expanded="true" onclick="ui.sidebar('sidebar', 'close')"><span><i class="ico ico-close">닫기</i></span></button>
+        </div>
+    </aside>
+    <!-- e: Sidebar -->
+    <!-- e: Aside -->
+
+    <!-- s: Container -->
+    <div class="container">
+        <!-- s: Content -->
+        <main id="content" class="content main-wrap" role="main">
+            <h1 class="blind dv-pc-only">에브리봇 홈</h1>
+            <div class="paging-area">
+                <span class="paging-label start">01</span>
+                <ul class="paging-list">
+                    <li class="paging-item item1 is-current is-active" aria-selected="true"><a href="#" class="paging-point">인트로</a></li>
+                    <li class="paging-item item2" aria-selected="false"><a href="#" class="paging-point">제품</a></li>
+                    <li class="paging-item item3" aria-selected="false"><a href="#" class="paging-point">고객지원</a></li>
+                    <li class="paging-item item4" aria-selected="false"><a href="#" class="paging-point">기업</a></li>
+                    <li class="paging-item item5" aria-selected="false"><a href="#" class="paging-point">기술력</a></li>
+                    <li class="paging-item item6" aria-selected="false"><a href="#" class="paging-point">뉴스룸</a></li>
+                </ul>
+                <span class="paging-label end">06</span>
+                <div class="paging-line"><span></span></div>
+            </div>
+            <div class="section-area">
+                <section id="mainSec1" class="section main-sec1 is-active is-animated">
+                    <div class="swiper swiper-main-profile">
+                        <div class="swiper-container">
+                            <ul class="swiper-wrapper">
+                                <!-- <li class="swiper-slide bg-main16"></li> -->
+                                <li class="swiper-slide bg-main12"></li>
+                                <li class="swiper-slide bg-main13"></li>
+                                <li class="swiper-slide bg-main14"></li>
+                                <li class="swiper-slide bg-main15"></li>
+                            </ul>
+                            <div class="swiper-inner">
+                                <div class="in-sec">
+                                    <div class="cont-sec ani-group">
+                                        <!--
+                                        <div class="swiper-content is-active">
+                                            <div class="tit-area">
+                                                <h2 class="tit">일상에 감동을 선사합니다.</h2>
+                                                <p class="txt">EVERYDAY EVERYBOT</p>
+                                            </div>
+                                        </div>
+                                        -->
+
+                                        <!-- 무한슬라이더 가상카운트 맞춤 -->
+
+                                        <!-- <div class="swiper-content ani-element dur-1">
+                                            <div class="tit-area">
+                                                <h2 class="tit"><br>로봇청소기의 새로운 기준</h2>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="swiper-content ani-element dur-1">
+                                            <div class="tit-area">
+                                                <h2 class="tit">로봇이 선사하는 내 삶의 밸런스<span class="sm-txt">EVERYDAY EVERYBOT</span></h2>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="swiper-content ani-element dur-1">
+                                            <div class="tit-area">
+                                                <h2 class="tit">2</h2>
+                                            </div>
+                                        </div> -->
+                                        <div class="swiper-content ani-element dur-1 is-active">
+                                            <div class="tit-area">
+                                                <h2 class="tit">로봇이 선사하는 내 삶의 밸런스<span class="sm-txt">EVERYDAY EVERYBOT</span></h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-content ani-element dur-1">
+                                            <div class="tit-area">
+                                                <h2 class="tit">놀랍도록 강력한 청소력<br>에브리봇이 만들면 다릅니다.</h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-content ani-element dur-1">
+                                            <div class="tit-area">
+                                                <h2 class="tit"><br>사람과 공간을 이해하는 기술</h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-content ani-element dur-1">
+                                            <div class="tit-area">
+                                                <h2 class="tit"><br>로봇청소기의 새로운 기준</h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-content ani-element dur-1"><!-- 무한슬라이더 가상카운트 맞춤 -->
+                                            <div class="tit-area">
+                                                <h2 class="tit">로봇이 선사하는 내 삶의 밸런스<span class="sm-txt">EVERYDAY EVERYBOT</span></h2>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-controls ani-element dur-2">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-pagination"><span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dv-mo-only scrolling">
+                        <em class="txt">Scroll</em>
+                        <i class="ico ico-scroll"></i>
+                        <i class="ico ico-scroll"></i>
+                    </div>
+                </section>
+                <section id="mainSec2" class="section main-sec2">
+                    <div class="in-sec">
+                        <div class="tab-area ani-group">
+                            <p class="txt-header ani-element dur-1">에브리봇을 경험해보세요</p>
+                            <div class="swiper-area swiper-main-item">
+                                <div class="tab-nav tab-main ani-element dur-1">
+                                    <div class="tab-list">
+                                        <button type="button" id="tabNav4" class="btn tab-item is-selected"><span>쓰리스핀</span></button>
+                                        <button type="button" id="tabNav1" class="btn tab-item"><span>3i</span></button>
+                                        <button type="button" id="tabNav5" class="btn tab-item"><span>3i POP</span></button>
+                                        <button type="button" id="tabNav2" class="btn tab-item"><span>엣지</span></button>
+                                        <button type="button" id="tabNav3" class="btn tab-item"><span>RS700</span></button>
+                                    </div>
+                                </div>
+                                <div class="swiper-container ani-element dur-2">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <div class="tit-area">
+                                                <h2 class="tit">쓰리스핀 로봇물걸레청소기</h2>
+                                                <p class="explain">3개의 모터가 만드는 강력한 파워,<br>43dB의 속삭이듯 조용한 세계</p>
+                                            </div>
+                                            <div class="swiper-pagination"><span></span></div>
+                                            <div class="btn-area ani-element dur-4">
+                                                <a href="/pages/product/water_cleaners4.asp" class="btn btn-detail"><span>자세히 보기</span></a>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <div class="tit-area">
+                                                <h2 class="tit">3i 흡입+걸레 로봇청소기</h2>
+                                                <p class="explain">프리미엄 성능의 최첨단 공간 인식 기능과 강력한 청소력,<br/>3단계 물공급 조절과 미세먼지 99.99% 배출차단</p>
+                                            </div>
+                                            <div class="swiper-pagination"><span></span></div>
+                                            <div class="btn-area ani-element dur-4">
+                                                <a href="/pages/product/normal_cleaners3.asp" class="btn btn-detail"><span>자세히 보기</span></a>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <div class="tit-area">
+                                                <h2 class="tit">3i POP 흡입+걸레 로봇청소기</h2>
+                                                <p class="explain">GS홈쇼핑 공동기획으로 완성된 절대 가성비<br>2600PA의 강력한 흡입력과 500mL 대용량 먼지통</p>
+                                            </div>
+                                            <div class="swiper-pagination"><span></span></div>
+                                            <div class="btn-area ani-element dur-4">
+                                                <a href="/pages/product/normal_cleaners4.asp" target="_blank" class="btn btn-detail"><span>자세히 보기</span></a>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <div class="tit-area">
+                                                <h2 class="tit">엣지 로봇물걸레청소기</h2>
+                                                <p class="explain">걸레 돌출 구조로 만든 첫 번째 에브리봇<br>구석까지 꼼꼼하게, 더 조용하게</p>
+                                            </div>
+                                            <div class="swiper-pagination"><span></span></div>
+                                            <div class="btn-area ani-element dur-4">
+                                                <a href="/pages/product/water_cleaners3.asp" class="btn btn-detail"><span>자세히 보기</span></a>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <div class="tit-area">
+                                                <h2 class="tit">RS700 로봇물걸레청소기</h2>
+                                                <p class="explain">2.1KG 묵직한 무게로 꾹꾹 눌러 닦아주며,<br>11CM 슬림 디자인으로 침대 밑까지 완벽하게 청소</p>
+                                            </div>
+                                            <div class="swiper-pagination"><span></span></div>
+                                            <div class="btn-area ani-element dur-4">
+                                                <a href="/pages/product/water_cleaners2.asp" class="btn btn-detail"><span>자세히 보기</span></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-area">
+                        <div class="bg bg-main24 is-active"></div>
+                        <div class="bg bg-main21"></div>
+                        <div class="bg bg-main25"></div>
+                        <div class="bg bg-main22"></div>
+                        <div class="bg bg-main23"></div>
+
+                    </div>
+                </section>
+                <section id="mainSec3" class="section main-sec3 bg-main3 flex-center cross-center">
+                    <div class="in-sec">
+                        <div class="cont-sec ani-group">
+                            <div class="tit-area ani-element dur-1">
+                                <h2 class="tit">무엇을 도와드릴까요?</h2>
+                            </div>
+                            <div class="cs-area ani-element dur-2">
+                                <ul class="cs-list">
+                                    <!-- 삭제
+                                    <li class="col">
+                                        <a href="/pages/newsroom/notice_list.asp">
+                                            <i class="ico ico-cs cs1"></i>
+                                            <span class="txt">공지사항</span>
+                                        </a>
+                                    </li>
+                                    -->
+                                    <li class="col">
+                                        <a href="/pages/cs/shop_search.asp">
+                                            <i class="ico ico-cs cs3"></i>
+                                            <span class="txt">매장찾기</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a href="/pages/cs/cs1.asp">
+                                            <i class="ico ico-cs cs4"></i>
+                                            <span class="txt">사용가이드</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a href="/pages/cs/faq.asp">
+                                            <i class="ico ico-cs cs1"></i>
+                                            <span class="txt">자주하는 질문</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a href="/pages/cs/as.asp">
+                                            <i class="ico ico-cs cs2"></i>
+                                            <span class="txt">AS접수</span>
+                                        </a>
+                                    </li>
+
+
+                                    <!-- 삭제
+                                    <li class="col">
+                                        <a href="#">
+                                            <i class="ico ico-cs cs6"></i>
+                                            <span class="txt">동영상 가이드</span>
+                                        </a>
+                                    </li>
+                                    -->
+                                </ul>
+                            </div>
+                            <div class="info-area ani-element dur-3 dv-pc-only">
+                                <a href="tel:070-4938-7920" class="btn btn-cs"><span>고객지원<strong>070-4938-7920</strong></span></a>
+                                <ul class="info-list">
+                                    <li>평일 09:00 ~ 17:00</li>
+                                    <li>점심시간 12:30 ~ 13:30</li>
+                                    <li>주말 / 공휴일 휴무입니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-area ani-element dv-mo-only">
+                        <a href="tel:070-4938-7920" class="btn btn-cs"><span>고객지원<strong>070-4938-7920</strong></span></a>
+                        <ul class="info-list">
+                            <li>평일 09:00 ~ 17:00</li>
+                            <li>점심시간 12:30 ~ 13:30</li>
+                            <li>주말 / 공휴일 휴무입니다.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="mainSec4" class="section main-sec4 bg-main4 flex-center cross-center">
+                    <div class="in-sec">
+                        <div class="cont-area">
+                            <div class="tit-area ani-group">
+                                <p class="txt ani-element dur-1">Better Home, Better Life</p>
+                                <h2 class="tit ani-element dur-2">삶의 질을 바꾸는 로봇 기업</h2>
+                                <p class="explain ani-element dur-2">
+                                    에브리봇은 새로운 시각으로 일상의 불편함을 <br class="dv-mo-only">연구합니다. <br class="dv-pc-only">
+                                    더 나은 아이디어와 새로운 기술이 적용된 <br>
+                                    홈 서비스 로봇으로 일상을 풍요롭게 만듭니다.
+                                </p>
+                            </div>
+                            <div class="btn-area ani-element dur-3">
+                                <a href="/pages/everybot/introduce1.asp" class="btn btn-more"><span>자세히 보기</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="mainSec5" class="section main-sec5 bg-main5 flex-center cross-center">
+                    <div class="in-sec">
+                        <div class="cont-area">
+                            <div class="tit-area">
+                                <p class="txt ani-element dur-1">Best of Best</p>
+                                <h2 class="tit ani-element dur-2">세계 최고의 기술력</h2>
+                                <p class="explain ani-element dur-2">
+                                    에브리봇은 10년 이상의 로봇 개발 노하우와 홈 서비스 <br class="dv-mo-only">로봇 및 <br class="dv-pc-only">
+                                    자율주행 로봇 분야의 핵심 기술력을 바탕으로 <br>
+                                    4차 산업혁명을 선도합니다.
+                                </p>
+                            </div>
+                            <div class="btn-area ani-element dur-3">
+                                <a href="/pages/everybot/technic1.asp" class="btn btn-more"><span>자세히 보기</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="mainSec6" class="section main-sec6 bg-main6 flex-center cross-center">
+                    <div class="in-sec">
+                        <div class="cont-sec ani-group">
+                            <div class="tit-area ani-element dur-1">
+                                <h2 class="tit">에브리봇 소식</h2>
+                                <div class="swiper-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="btn-area">
+                                    <a href="/pages/newsroom/news_list.asp" target="_self" class="btn btn-more"><span>전체보기</span></a>
+                                </div>
+                            </div>
+                            <div class="swiper-area swiper-main-story"> <!-- ani-element  dur-2 -->
+                                <div class="swiper-container">
+                                    <div class="swiper-shadow left"></div>
+                                    <div class="swiper-shadow right"></div>
+                                    <ul class="swiper-wrapper">
+
+                                        <li class="swiper-slide">
+                                            <div href="/pages/newsroom/news_view.asp?iBDNo=57" target="_self" class="main-story">
+                                                <div class="story-thumb">
+                                                    <div class="thumb bg-story1">
+
+                                                        <img src="/upfiles/board/7/202204061621150175.JPG" alt="">
+
+                                                    </div>
+                                                </div>
+                                                <div class="story-cont">
+                                                    <div class="cont-area">
+                                                        <p class="tit ellipsis2"><strong>에브리봇, 두산베어스와 2년 연속 전략적 파트너십</strong></p>
+                                                        <div class="txt-cont ellipsis2"><p>홈서비스 로봇 전문기업 에브리봇이 두산베어스와 2년 연속 파트너십을 이어간다고 23일 밝혔다.&nbsp;</p><p>&nbsp;</p><p><img src="http://www.everybot.co.kr/upfiles/editorImg/202246/20220406162017063.jpg" title="20220406162017063.jpg"></p><p>&nbsp;</p><p>&nbsp;</p><p>에브리봇은 지난해 두산베어스와 첫 파트너십을 맺은 이후 온·오프라인을 통한 다양한 활동을 함께 했다. 지난 1월 진행된 네이버 쇼핑라이브 방송에선 두산베어스의 정수빈 선수와 유창근 장내 아나운서가 진행자로 출연하기도 했다.</p><p>&nbsp;</p><p>두산베어스는 올 시즌에도 선수단 유니폼 오른쪽 소매에 에브리봇 브랜드 로고 패치를 부착하고 잠실구장 안팎의 배너와 전광판 영상 등 다양한 매체를 통한 홍보에 나선다.</p><p>&nbsp;</p><p>에브리봇 홈런존을 통해 채러티 활동도 진행된다. 홈경기시 잠실 야구장 외야에 특정 블록을 지정하고 두산 소속 선수가 해당 구역으로 홈런을 칠 때마다 '쓰리스핀' 로봇청소기 3대를 적립해 시즌 종료 후 복지 단체에 함께 기부할 예정이다.</p><p>&nbsp;</p><p>에브리봇 관계자는 "올해 잠실구장 현장 프로모션을 비롯해 라이브 커머스와 뉴미디어 브랜디드 콘텐츠 개발 등 다양한 부분에서 적극적인 협업을 확대해나갈 계획"이라고 말했다.</p><p>&nbsp;</p><p>&nbsp;</p><p>&lt;원문&gt;<a href="https://news.naver.com/main/read.naver?mode=LSD&amp;mid=sec&amp;sid1=101&amp;oid=123&amp;aid=0002270170">https://news.naver.com/main/read.naver?mode=LSD&amp;mid=sec&amp;sid1=101&amp;oid=123&amp;aid=0002270170</a></p></div>
+                                                    </div>
+                                                    <div class="foot-area">
+                                                        <p class="txt-date">2022-03-23</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="/pages/newsroom/news_view.asp?iBDNo=57" target="_self" class="main-story-btn"></a> <!-- DB문제로 링크 별도 처리 -->
+                                        </li>
+
+
+                                        <li class="swiper-slide">
+                                            <div href="/pages/newsroom/news_view.asp?iBDNo=56" target="_self" class="main-story">
+                                                <div class="story-thumb">
+                                                    <div class="thumb bg-story1">
+
+                                                        <img src="/upfiles/board/7/202204061619010797.JPG" alt="">
+
+                                                    </div>
+                                                </div>
+                                                <div class="story-cont">
+                                                    <div class="cont-area">
+                                                        <p class="tit ellipsis2"><strong>에브리봇, 포브스 코리아 선정 ‘파워 혁신기업’ 10위</strong></p>
+                                                        <div class="txt-cont ellipsis2"><p>세계의 다양한 이슈 중 가장 영향력 있는 일들에 대해 순위를 선정 및 발표하는 것으로 유명한 ‘포브스’코리아에서, 지난 2월 ‘파워 혁신기업 한국 TOP100ㅣ중소기업 리그’를 발표했다.</p><p>&nbsp;</p><p>선정 기준은 지식재산권의 파급력, 혁신 개방성, 혁신 인재 중심으로 혁신을 정량화 하여 평가되었는데, 로봇청소기로 유명한 에브리봇이 10위에 선정되며 국내 대표 로봇 전문 기업으로서의 입지를 공고히 했다.</p><p>&nbsp;</p><p>포브스코리아의 발표에 따르면, 에브리봇은 2016년 세계 최초로 듀얼스핀 방식 보급형 물걸레 로봇청소기인 RS500을 출시하였으며 불과 4년 후인 2020년에는 대표 제품인 엣지 물걸레 로봇청소기가 국내 로봇청소기 점유율(M/S) 25.1%로 1위를 기록했다.</p><p>&nbsp;</p><p>에브리봇은 지난 2019년부터 2021년까지 정부 R&amp;D 과제를 맡아 자체 라이다(LiDAR) 센서 기술도 확보하였으며 현재 수십개의 로봇 관련 국내외 특허를 보유중인 것으로 전해졌다.</p><p>&nbsp;</p><p>이 중 특히 고득점을 받은 특허로는 ▶로봇청소기 및 그 제어 방법 (US10624517B2)으로 이 특허를 진행했던 핵심 개발자이자 혁신 인재로 선정된 김봉윤 에브리봇 기술연구소 이사는 “앞으로도 독자적인 로봇 기술 경쟁력을 갖춘 기업이 되기 위해 연구개발에 매진할 것” 이라고 포부를 밝혔다.</p><p>&nbsp;</p><p>한편 에브리봇은 역시 지난 2월, 한국기업평판연구소가 브랜드 빅데이터 평판 분석을 통한 ‘가정용품 상장기업 브랜드 평판’ 발표에서도 1위 코웨이를 이어 2위를 차지하였다.</p><p>&nbsp;</p><p>&lt;원문&gt;<a href="https://news.naver.com/main/read.naver?mode=LSD&amp;mid=sec&amp;sid1=102&amp;oid=014&amp;aid=0004799122">https://news.naver.com/main/read.naver?mode=LSD&amp;mid=sec&amp;sid1=102&amp;oid=014&amp;aid=0004799122</a></p></div>
+                                                    </div>
+                                                    <div class="foot-area">
+                                                        <p class="txt-date">2022-03-07</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="/pages/newsroom/news_view.asp?iBDNo=56" target="_self" class="main-story-btn"></a> <!-- DB문제로 링크 별도 처리 -->
+                                        </li>
+
+
+                                        <li class="swiper-slide">
+                                            <div href="/pages/newsroom/news_view.asp?iBDNo=55" target="_self" class="main-story">
+                                                <div class="story-thumb">
+                                                    <div class="thumb bg-story1">
+
+                                                        <img src="/upfiles/board/7/202204061616370891.JPG" alt="">
+
+                                                    </div>
+                                                </div>
+                                                <div class="story-cont">
+                                                    <div class="cont-area">
+                                                        <p class="tit ellipsis2"><strong>에브리봇, 두산베어스 정수빈 선수와 쓰리스핀 로봇청소기 '쇼핑라이브' 진행</strong></p>
+                                                        <div class="txt-cont ellipsis2"><p>에브리봇이 오는 18일 두산베어스 정수빈 선수와 네이버 쇼핑라이브를 진행한다고 17일 밝혔다.&nbsp;</p><p>&nbsp;</p><p><img src="https://image.edaily.co.kr/images/photo/files/NP/S/2022/01/PS22011700533.jpg">&nbsp;</p><p>&nbsp;</p><p>두산베어스의 중견수이자 대표 선수인 정수빈 선수는 실제로도 쓰리스핀 로봇물걸레청소기를 사용 중인 ‘찐팬’으로 두산베어스 유창근 장내 아나운서와 함께 출연해 직접 촬영한 영상을 공개하고 제품을 소개할 예정이다.</p><p>&nbsp;</p><p>세 개의 걸레가 부착되는 형태인 ‘쓰리스핀’은 제품 무게로 눌러 닦는 파워풀 클리닝뿐만 아니라, 43dB(도서관 수준)의 저소음으로 아파트와 같은 공동주택에서도 늦은 시간 걱정없이 사용 가능하다.</p><p>&nbsp;</p><p>&lt;원문&gt;<a href="https://www.edaily.co.kr/news/read?newsId=02466566632198704&amp;mediaCodeNo=257&amp;OutLnkChk=Y">https://www.edaily.co.kr/news/read?newsId=02466566632198704&amp;mediaCodeNo=257&amp;OutLnkChk=Y</a></p></div>
+                                                    </div>
+                                                    <div class="foot-area">
+                                                        <p class="txt-date">2022-01-17</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="/pages/newsroom/news_view.asp?iBDNo=55" target="_self" class="main-story-btn"></a> <!-- DB문제로 링크 별도 처리 -->
+                                        </li>
+
+
+                                        <li class="swiper-slide">
+                                            <div href="/pages/newsroom/news_view.asp?iBDNo=54" target="_self" class="main-story">
+                                                <div class="story-thumb">
+                                                    <div class="thumb bg-story1">
+
+                                                        <img src="/upfiles/board/7/202204061611090668.JPG" alt="">
+
+                                                    </div>
+                                                </div>
+                                                <div class="story-cont">
+                                                    <div class="cont-area">
+                                                        <p class="tit ellipsis2"><strong>에브리봇, 자율주행 서비스 로봇용 라이다센서 핵심 기술 특허 출원</strong></p>
+                                                        <div class="txt-cont ellipsis2"><p>홈서비스 로봇 전문기업 에브리봇이 자율주행 서비스 로봇에 탑재되는 라이다센서 자체 개발을 통해 핵심 기술 5건에 대한 특허출원을 완료했다고 밝혔다.&nbsp;</p><p>&nbsp;</p><p><img src="https://image.fnnews.com/resource/media/image/2021/12/27/202112270911007014_l.jpg" alt="에브리봇, 자율주행 서비스 로봇용 라이다센서 핵심 기술 특허 출원">&nbsp;</p><p>&nbsp;</p><p>라이다(LiDAR, Light Detection And Ranging) 센서는 주로 레이저 거리 감지 센서를 고속으로 360도 회전시켜 전방향 장애물과의 거리를 측정하고 이를 통해 공간 정보를 실시간으로 인식하는 기술로 자율주행 로봇의 핵심 부품 중 하나로 손꼽힌다.</p><p>&nbsp;</p><p>에브리봇이 이번에 개발한 라이다센서는 기존 라이다센서들이 가지고 있던 고질적인 문제들을 모두 해결했다. 기존 라이다센서에 적용되던 저가형 DC 모터와 회전벨트 대신 아우터로터 타입의 BLDC 모터를 적용하여 소음 저감 및 각도 정보를 정확하게 추출할 수 있다. 또한, 기존 라이다센서의 내구성 저하의 핵심 원인인 슬립링을 제거하고, 무선으로 전력을 공급하고 데이터를 송수신할 수 있는 기술을 개발하여 내구성을 대폭 향상시켰다.</p><p>그 외에도 센서의 노이즈 간섭을 최소화 할 수 있는 하드웨어 노이즈 필터를 개발하여 거리 데이터의 정확도를 향상시켰다.</p><p>&nbsp;</p><p>에브리봇 관계자는 “라이다센서는 로봇의 정확한 자율주행을 위해 반드시 필요한 핵심 부품 중 하나로 로봇청소기뿐 아니라 물류로봇, 서빙로봇, 안내로봇 등 자율주행이 필요한 대부분의 서비스로봇에 탑재된다”며 “이번에 개발된 라이다센서는 에브리봇의 자율주행 AI 서비스로봇에 적용하고 있으며, 국내외 다양한 로봇 기업으로 공급망을 확대해 나갈 계획이다”고 밝혔다.</p><p>&nbsp;</p><p>한편, 에브리봇은 지난 11월 AI융합기술연구소를 설립하여 인공지능(AI)과 사물인터넷(IoT), 빅데이터 기술을 융합한 서비스 로봇 개발에 박차를 가하고 있다.</p><p>&nbsp;</p><p>&lt;원문&gt;<a href="https://www.fnnews.com/news/202112270910202818">https://www.fnnews.com/news/202112270910202818</a></p></div>
+                                                    </div>
+                                                    <div class="foot-area">
+                                                        <p class="txt-date">2021-12-27</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="/pages/newsroom/news_view.asp?iBDNo=54" target="_self" class="main-story-btn"></a> <!-- DB문제로 링크 별도 처리 -->
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- s: Footer -->
+                        <footer class="footer">
+                            <div class="in-sec">
+                                <address class="address dv-pc-only">
+                                    에브리봇 주식회사
+                                    <span class="addr"
+                                    >경기도 성남시 분당구 판교공원로2길 11 에브리봇 빌딩</span
+                                    >
+                                </address>
+                                <!--
+                                        <ul class="contactUs dv-pc-only">
+                                            <li>영업/특판문의 : <a href="tel:070-4913-8806">070-4913-8806</a></li>
+                                            <li>AS문의: <a href="tel:070-4938-7920">070-4938-7920</a></li>
+                                        </ul>
+                                        -->
+                                <ul class="contactUs dv-pc-only">
+                                    <li>영업/특판문의 : 070-4913-8806</li>
+                                    <li>AS문의 : 070-4938-7920</li>
+                                    <li>마케팅문의 : marketing@everybot.net</li>
+                                    <li>
+                                        <form
+                                            method="POST"
+                                            action="https://www.everybot.co.kr/pages/newsroom/notice_view.asp"
+                                        >
+                                            <input type="hidden" name="iBDNo" value="23" />
+                                            <input type="hidden" name="iBlock" value="1" />
+                                            <input type="hidden" name="iPage" value="1" />
+                                            <button type="submit">개인정보 처리방침</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                                <p class="copyright">Copyright ⓒ EVERYBOT INC. All rights reserved.</p>
+                                <div class="sns-area">
+                                    <ul class="sns">
+                                        <li>
+                                            <a
+                                                href="https://blog.naver.com/everybot"
+                                                target="_blank"
+                                                class="btn btn-sns"
+                                            ><span><i class="ico ico-blog"></i></span
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="https://www.instagram.com/everybot_official/"
+                                                target="_blank"
+                                                class="btn btn-sns"
+                                            ><span><i class="ico ico-insta"></i></span
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="https://www.youtube.com/channel/UC1m9bsSnFnjlTrnk7B2o0fA"
+                                                target="_blank"
+                                                class="btn btn-sns"
+                                            ><span><i class="ico ico-youtube-main"></i></span
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </footer>
+
+                        <script type="text/javascript">
+                            window._rblq = window._rblq || [];
+                            _rblq.push(["setVar", "cuid", "16214e06-5fc9-4ca4-a0ec-3e14fd3d7d56"]);
+                            _rblq.push(["setVar", "device", "PW"]);
+                            _rblq.push(["track", "visit"]);
+                            (function (s, x) {
+                                s = document.createElement("script");
+                                s.type = "text/javascript";
+                                s.async = true;
+                                s.defer = true;
+                                s.src =
+                                    ("https:" == document.location.protocol ? "https" : "http") +
+                                    "://assets.recobell.io/rblc/js/rblc-apne1.min.js";
+                                x = document.getElementsByTagName("script")[0];
+                                x.parentNode.insertBefore(s, x);
+                            })();
+                        </script>
+
+                        <!-- e: Footer -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+        <!-- e: Content -->
+    </div>
+    <!-- e: Container -->
+
+    <div class="dimmer" hidden></div>
+    <!-- s: main popoup -->
+
+    <!-- e: main popup -->
+
+
+    <!-- s: homeshopping popup -->
+    <div id="popupSchedule" class="popup-wrap popup-schedule" role="dialog" aria-modal="true" aria-labelledby="popupBasicTitle1" aria-describedby="">
+        <div class="popup popup-basic popup-style2">
+            <div class="popup-focus" role="text"></div>
+            <div class="popup-inner">
+                <!-- s: 본문영역 -->
+                <div class="popup-header">
+                    <h3 id="popupBasicTitle1">에브리봇 홈쇼핑 일정표</h3>
+                </div>
+                <div class="popup-container">
+                    <div id="calendar"></div>
+
+                    <div class="select-wrap">
+                        <select name="scheduleFilter" id="scheduleFilter" title="제품 전체" class="select">
+                            <option value="0" >제품 전체</option>
+                            <option value="5" >3i POP</option>
+                            <option value="1" >EDGE</option>
+                            <option value="6" >쓰리스핀</option>
+                        </select>
+                    </div>
+
+                    <div class="legend">
+                        <span><span class="square broad"></span>확정</span>
+                        <span><span class="square pro-broad"></span>가편성</span>
+                    </div>
+                </div>
+                <!-- e: 본문영역 -->
+                <button type="button" class="btn popup-closer" aria-controls="popupSchedule" title="에브리봇 홈쇼핑 일정표 팝업닫기" onclick="ui.popup('popupSchedule', this, 'close')"><span>Close</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- e: homeshopping popup -->
+</div>
+
+<script>
+    setTimeout(function(){
+        $('#popupSchedule').removeClass('is-active');
+    },300);
+
+    setTimeout(function(){
+        $('#popupSchedule').css('z-index','-1');
+    },600);
+
+</script>
+</body>
+</html>
