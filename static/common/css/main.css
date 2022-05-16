@@ -313,8 +313,8 @@ html, body, .wrapper, .container, .content, .section-area, .section {height:100%
 .main-sec1 .swiper-inner .in-sec .cont-sec {width:100%;}
 .main-sec1 .swiper-inner .in-sec .cont-sec {margin-top:-4rem;}
 .main-sec1 .swiper-controls {position:relative; z-index:2; margin-top:3.5rem; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center;}
-.main-sec1 .swiper-button-prev {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; background:url('static/images/common/ico_pageMain_white01.svg') no-repeat 0 0 / auto 1.6rem;}
-.main-sec1 .swiper-button-next {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; margin-left:0.7rem; background:url('static/images/common/ico_pageMain_white02.svg') no-repeat right 0 / auto 1.6rem;}
+.main-sec1 .swiper-button-prev {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; background:url(/static/images/common/ico_pageMain_white01.svg) no-repeat 0 0 / auto 1.6rem;}
+.main-sec1 .swiper-button-next {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; margin-left:0.7rem; background:url(/static/images/common/ico_pageMain_white02.svg) no-repeat right 0 / auto 1.6rem;}
 .main-sec1 .swiper-pagination {display:-webkit-box;display:-ms-flexbox;display:flex; position:relative; z-index:2; top:2px; overflow:hidden; margin-left:2rem; width:27rem; height:2px;}
 .main-sec1 .swiper-pagination:after {content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background-size:100%; background-color:rgba(255,255,255,0.3);}
 .main-sec1 .swiper-pagination span {display:block; position:absolute; left:0; bottom:0; width:100%; height:100%; background-color:#fff; -webkit-transform:translateX(-100%); -ms-transform:translateX(-100%); transform:translateX(-100%);}
@@ -463,8 +463,8 @@ html, body, .wrapper, .container, .content, .section-area, .section {height:100%
 .main-sec6 .swiper-slide-active .story-thumb {transform:translateX(0); transition:width 0.4s ease;}
 */
 .main-sec6 .swiper-controls {display:-webkit-box;display:-ms-flexbox;display:flex; margin-left:2rem; position:relative;}
-.main-sec6 .swiper-controls .swiper-button-prev {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; background:url(static/images/common/ico_pageMain_dark01.svg) no-repeat 0 0 / auto 1.6rem; margin-left:0.6rem;}
-.main-sec6 .swiper-controls .swiper-button-next {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; margin-left:0.7rem; background:url(static/images/common/ico_pageMain_dark02.svg) no-repeat right 0 / auto 1.6rem;}
+.main-sec6 .swiper-controls .swiper-button-prev {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; background:url(/static/images/common/ico_pageMain_dark01.svg) no-repeat 0 0 / auto 1.6rem; margin-left:0.6rem;}
+.main-sec6 .swiper-controls .swiper-button-next {position:static !important; left:auto; top:auto; right:auto; bottom:auto; margin-top:0; width:1.6rem; height:1.6rem; margin-left:0.7rem; background:url(/static/images/common/ico_pageMain_dark02.svg) no-repeat right 0 / auto 1.6rem;}
 .main-sec6 .btn-more {margin-left:14.5rem;}
 
 /*
