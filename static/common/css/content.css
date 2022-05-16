@@ -10,19 +10,19 @@
     ## 공통화면
 -------------------------------------------------------------------*/
 /* Sub Visual */
-.sub-body .cs-wrap .content-header {background:url('static/images/visual/visual_cs.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .news-wrap .content-header {background:url('static/images/visual/visual_news.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .invest-wrap .content-header {background:url('static/images/visual/visual_invest.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .technique-wrap .content-header {background:url('static/images/visual/visual_technique.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .rnd-wrap .content-header {background:url('static/images/visual/visual_rnd.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .company-wrap .content-header {background:url('static/images/visual/visual_company.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .ts300.product-wrap .content-header {background:url('static/images/visual/visual_product_ts300.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .edge.product-wrap .content-header {background:url('static/images/visual/visual_product_edge.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .rs500n.product-wrap .content-header {background:url('static/images/visual/visual_product_rs500n.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .rs700.product-wrap .content-header {background:url('static/images/visual/visual_product_rs700.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .three-i.product-wrap .content-header {background:url('static/images/visual/visual_product_3i.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .three-i-pop.product-wrap .content-header {background:url('static/images/visual/visual_product_3iPOP.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
-.sub-body .recruit-wrap .content-header {background:url('static/images/visual/visual_recruit.jpg') no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .cs-wrap .content-header {background:url(/static/images/visual/visual_cs.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .news-wrap .content-header {background:url(/static/images/visual/visual_news.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .invest-wrap .content-header {background:url(/static/images/visual/visual_invest.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .technique-wrap .content-header {background:url(/static/images/visual/visual_technique.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .rnd-wrap .content-header {background:url(/static/images/visual/visual_rnd.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .company-wrap .content-header {background:url(/static/images/visual/visual_company.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .ts300.product-wrap .content-header {background:url(/static/images/visual/visual_product_ts300.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .edge.product-wrap .content-header {background:url(/static/images/visual/visual_product_edge.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .rs500n.product-wrap .content-header {background:url(/static/images/visual/visual_product_rs500n.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .rs700.product-wrap .content-header {background:url(/static/images/visual/visual_product_rs700.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .three-i.product-wrap .content-header {background:url(/static/images/visual/visual_product_3i.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .three-i-pop.product-wrap .content-header {background:url(/static/images/visual/visual_product_3iPOP.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
+.sub-body .recruit-wrap .content-header {background:url(/static/images/visual/visual_recruit.jpg) no-repeat 0 top; background-position:center; background-size:cover;}
 
 /* content-header */
 .sub-body .content-header .sub-tit-area {padding:12.5rem 0 7.2rem; color:#fff; text-align:center;}
@@ -59,8 +59,8 @@
 .sub-cate > ul li.on a span{display:block; position:relative;}
 .sub-cate > ul li.on a span:after {content:''; display:block; position:absolute; bottom:-1.4rem; width:100%; height:0.3rem; background-color:#00a1df;}
 .sub-cate .mo-sub {display:none; width:100%; background-color:#f3f4f8; font-size:1.6rem; text-align:center;}
-.sub-cate .mo-sub .select-cate .btn {display:block; width:100%; padding:1.5rem 0; border-bottom:1rem solid #dedfe2; background-color:#f3f4f8; font-size:1.6rem; text-align:center; background:url(static/images/common/select_arrow_down.png) calc(100% - 1.5rem) 50% no-repeat; background-size:1.45rem 0.75rem;}
-.sub-cate .mo-sub .select-cate .btn.is-active {background-image:url('static/images/common/select_arrow_up.png');}
+.sub-cate .mo-sub .select-cate .btn {display:block; width:100%; padding:1.5rem 0; border-bottom:1rem solid #dedfe2; background-color:#f3f4f8; font-size:1.6rem; text-align:center; background:url(/static/images/common/select_arrow_down.png) calc(100% - 1.5rem) 50% no-repeat; background-size:1.45rem 0.75rem;}
+.sub-cate .mo-sub .select-cate .btn.is-active {background-image:url(/static/images/common/select_arrow_up.png);}
 .sub-cate .mo-sub .select-cate .listbox {display:none; position:absolute; left:0; top:calc(100% - 1rem); width:100%; background-color:#fff; border-bottom:1px solid #ddd; opacity:0; -webkit-animation:dropdown 0.3s ease both; animation:dropdown 0.3s ease both; -webkit-transition:opacity 0.25s ease; -o-transition:opacity 0.25s ease; transition:opacity 0.25s ease;}
 .sub-cate .mo-sub .select-cate .listbox a {display:block; border-top:1px solid #ddd; background-color:#fff;}
 .sub-cate .mo-sub .select-cate .btn.is-active + .listbox {display:block !important; opacity:1; -webkit-animation:dropdown-active 0.25s ease both; animation:dropdown-active 0.25s ease both;}
@@ -90,9 +90,9 @@
 .board-list .acco-item {position:relative; border-bottom:1px solid #ccc;}
 .board-list .acco-item.is-active:last-child {border-bottom:0;} /*열렸을 경우 사용가이드 + FAQ (FAQ는 확인되지 않음)*/
 .board-list .acco-item .ico {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-flex:0; -ms-flex:none; flex:none; -webkit-box-align:start; -ms-flex-align:start; align-items:flex-start; width:2rem; height:2rem; background:url('static/images/common/ico_q.png') no-repeat 0 top; background-size:2rem;}
-.board-list .acco-item .ico.ico-a {position:absolute; top:1rem; left:1.3rem; background-image:url('static/images/common/ico_a.png');}
-.board-list .acco-item .acco-title {display:block; width:100%; background:url('static/images/common/ico_arrow_down.png') calc(100% - 1.9rem) 50% no-repeat; background-size:0.85rem 0.45rem;}
-.board-list .acco-item.is-active .acco-title {background-image:url('static/images/common/ico_arrow_up.png');}
+.board-list .acco-item .ico.ico-a {position:absolute; top:1rem; left:1.3rem; background-image:url(/static/images/common/ico_a.png);}
+.board-list .acco-item .acco-title {display:block; width:100%; background:url(/static/images/common/ico_arrow_down.png) calc(100% - 1.9rem) 50% no-repeat; background-size:0.85rem 0.45rem;}
+.board-list .acco-item.is-active .acco-title {background-image:url(/static/images/common/ico_arrow_up.png);}
 .board-list .acco-item .acco-title .acco-toggle {display:-webkit-box;display:-ms-flexbox;display:flex; overflow:hidden; -webkit-box-align:center; -ms-flex-align:center; align-items:center; width:100%; padding:1rem 1.3rem; outline:0;}
 .board-list .acco-item .acco-title .acco-toggle .acco-label {margin-left:1rem; text-align:left;}
 .board-list .acco-item .acco-title .acco-label {float:left;}
@@ -1202,9 +1202,9 @@
 .company-introduce1-sec .step-depth1 .grid {margin-top:2.5rem;}
 .company-introduce1-sec .step-depth1 .grid li {width:32%; border:1px solid #ddd; background-color:#fff;}
 .company-introduce1-sec .step-depth1 .ideology {display:block; width:100%; height:13rem; margin:0 auto; background-size:10rem; background-repeat:no-repeat; background-position:center; background-color:#f3f4f7;}
-.company-introduce1-sec .step-depth1 .ideology.ico-ideology01 {background-image:url('/images/common/ico_mission_01.svg');}
-.company-introduce1-sec .step-depth1 .ideology.ico-ideology02 {background-image:url('/images/common/ico_mission_02.svg');}
-.company-introduce1-sec .step-depth1 .ideology.ico-ideology03 {background-image:url('/images/common/ico_mission_03.svg');}
+.company-introduce1-sec .step-depth1 .ideology.ico-ideology01 {background-image:url(/static/images/common/ico_mission_01.svg);}
+.company-introduce1-sec .step-depth1 .ideology.ico-ideology02 {background-image:url(/static/images/common/ico_mission_02.svg);}
+.company-introduce1-sec .step-depth1 .ideology.ico-ideology03 {background-image:url(/static/images/common/ico_mission_03.svg);}
 .company-introduce1-sec .step-depth1 .grid dl {padding:2.2rem 2rem; background-color:#fff; text-align:left;}
 .company-introduce1-sec .step-depth1 .grid dl dt {font-size:1.5rem; font-weight:600;}
 .company-introduce1-sec .step-depth1 .grid dl dt:after {content:''; display:block; width:calc(100% + 2rem); height:1px; margin-top:1rem; background-color:#000;}
@@ -1222,9 +1222,9 @@
 .company-introduce1-sec .step-depth2 li dt {font-size:1.2rem; font-weight:600; color:#000; text-align:center; line-height:3rem;}
 .company-introduce1-sec .step-depth2 li dd {font-size:0.9rem; line-height:1.4rem;}
 .company-introduce1-sec .step-depth2 li .ico {display:block; width:4.8rem; height:4.8rem; margin:0 auto; background-size:4.8rem;}
-.company-introduce1-sec .step-depth2 li .ico.ico-mission01 {background-image:url('/images/common/ico_mission_04.svg');}
-.company-introduce1-sec .step-depth2 li .ico.ico-mission02 {background-image:url('/images/common/ico_mission_05.svg');}
-.company-introduce1-sec .step-depth2 li .ico.ico-mission03 {background-image:url('/images/common/ico_mission_06.svg');}
+.company-introduce1-sec .step-depth2 li .ico.ico-mission01 {background-image:url(/static/images/common/ico_mission_04.svg);}
+.company-introduce1-sec .step-depth2 li .ico.ico-mission02 {background-image:url(/static/images/common/ico_mission_05.svg);}
+.company-introduce1-sec .step-depth2 li .ico.ico-mission03 {background-image:url(/static/images/common/ico_mission_06.svg);}
 .company-introduce1-sec .step-depth2 li:first-child:after {content:''; position:absolute; right:0; width:0.8rem; height:0.8rem; margin-right:-0.4rem; border-radius:100%; background-color:#ebebeb;}
 .company-introduce1-sec .step-depth2 li:last-child:after {content:''; position:absolute; left:0; width:0.8rem; height:0.8rem; margin-left:-0.4rem; border-radius:100%; background-color:#ebebeb;}
 
@@ -2617,7 +2617,7 @@
 .ico-msg-sec + .btn-area .btn-bigh-style1 {width:100%;}
 
 @media all and (max-width:1024px){
-	.popup-shop-as .popup-style1 .popup-inner {height:auto;} //하단여백 제거
+	.popup-shop-as .popup-style1 .popup-inner {height:auto;}
 }
 @media all and (max-width:388px){
 	.ico-msg-sec br {display:none;}
