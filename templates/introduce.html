@@ -2,6 +2,45 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta property="og:title" content="EVERYBOT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EVERYBOT" />
+    <meta property="og:url" content="everybot.co.kr" />
+    <meta property="og:description" content="대한민국 대표 홈서비스 로봇 전문기업, 로봇청소기, 로봇공기청정기" />
+    <meta property="og:image" content="http://www.everybot.co.kr/images/visual/visual_company.jpg" />
+    <title>EVERYBOT</title>
+    <span itemscope="" itemtype="http://schema.org/Organization">
+<link itemprop="url" href="http://www.everybot.co.kr">
+<a itemprop="sameAs" href="https://blog.naver.com/everybot"></a>
+<a itemprop="sameAs" href="https://www.instagram.com/everybot_official/"></a>
+<a itemprop="sameAs" href="https://www.youtube.com/channel/UC1m9bsSnFnjlTrnk7B2o0fA"></a>
+</span>
+    <link rel="stylesheet" href="static/common/css/base.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/common.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/ui.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/content.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/libs/plugins.css?time=20191014_1">
+    <link rel="stylesheet" href="static/common/css/libs/animate.css?time=20191014_1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="static/images/icons/android-chrome-256x256.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/images/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/icons/favicon-32x32.png">
+    <link rel="mask-icon" href="static/images/icons/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="static/common/js/libs/EasePack.js"></script>
+    <script src="static/common/js/libs/TweenMax.js"></script>
+    <script src="static/common/js/pub/pub_device.js"></script>
+    <script src="static/common/js/pub/pub_plugins.js"></script>
+    <script src="static/common/js/pub/pub_utility.js"></script>
+    <script src="static/common/js/pub/pub_ui.js?time=20201104_1"></script>
     <link rel="stylesheet" href="static/common/css/main.css">
     <script type="text/javascript">
         jQuery(document).ready(function(e){
@@ -18,11 +57,369 @@
     <!-- e: SkipNav -->
 
     <!-- s: Header -->
-    <!--#Include Virtual="/includes/header.asp"-->
+    <div id="loading"></div>
+    <header class="header">
+        <div class="in-sec">
+            <div class="drawer-area">
+                <button type="button" class="btn btn-drawer" aria-controls="sidebar" aria-expanded="false" onclick="ui.sidebar('sidebar', 'open')"><span><i class="ico">Sidebar 열기</i></span></button>
+            </div>
+            <div class="logo-area">
+                <h1 class="logo"><a href="/main.asp"><span role="text">EVERYBOT</span></a></h1>
+            </div>
+
+            <!-- s: GNB -->
+            <div class="gnb-area">
+                <nav class="gnb">
+                    <ul>
+                        <li class="has-expand">
+                            <a href="/pages/everybot/introduce1.asp">에브리봇</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/everybot/technic1.asp">기술력</a></li>
+                                    <li><a href="/pages/everybot/rnd1.asp">연구개발</a></li>
+                                    <li><a href="/pages/everybot/introduce1.asp">회사소개</a></li>
+                                    <li><a href="/pages/recruit/recruit1.asp">인재채용</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-expand">
+                            <a href="/pages/product/product_all.asp">제품</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/product/water_cleaners1.asp" class="no-active">로봇물걸레청소기</a>
+                                        <div class="node3-menu">
+                                            <ul>
+                                                <li><a href="/pages/product/water_cleaners4.asp">쓰리스핀</a></li>
+                                                <!-- <li><a href="https://www.everybotmall.com/goods/goods_view.php?goodsNo=1000000151#detail_top" target="_blank">쓰리스핀</a></li> -->
+                                                <li><a href="/pages/product/water_cleaners3.asp">엣지</a></li>
+                                                <li><a href="/pages/product/water_cleaners2.asp">RS700</a></li>
+                                                <li><a href="/pages/product/water_cleaners1.asp">RS500N</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/pages/product/normal_cleaners3.asp" class="no-active">로봇청소기</a>
+                                        <div class="node3-menu">
+                                            <ul>
+                                                <li><a href="/pages/product/normal_cleaners3.asp">3i</a></li>
+                                                <li><a href="/pages/product/normal_cleaners4.asp">3iPOP</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-expand">
+                            <a href="https://everybot.irpage.co.kr" target="_blank">투자정보</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li>
+                                        <a href="https://everybot.irpage.co.kr" target="_blank">투자정보</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <a href="/pages/invest/money_list.asp">투자정보</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/invest/money_list.asp">경영정보</a></li>
+                                    <li class="dv-pc-only"><a href="/pages/invest/stock_list.asp">주가정보</a></li>
+                                    <li><a href="/pages/invest/issue_list.asp">공시현황</a></li>
+                                    <li><a href="/pages/invest/ir_list.asp">투자자 공고사항</a></li>
+                                </ul>
+                            </div>
+                            -->
+                        </li>
+                        <li class="has-expand">
+                            <a href="/pages/newsroom/notice_list.asp">뉴스룸</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/newsroom/notice_list.asp">공지사항</a></li>
+                                    <li><a href="/pages/newsroom/news_list.asp">에브리봇 소식</a></li>
+                                    <li><a href="/pages/newsroom/promotion_list.asp">홍보관</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-expand">
+                            <a href="/pages/cs/shop_search.asp">고객지원</a>
+                            <div class="node2-menu">
+                                <ul>
+                                    <li><a href="/pages/cs/shop_search.asp">매장찾기</a></li>
+                                    <li><a href="/pages/cs/cs1.asp">사용가이드</a>
+                                    <li><a href="/pages/cs/faq.asp">FAQ</a></li>
+                                    <li><a href="/pages/cs/as.asp">A/S접수</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- e: GNB -->
+
+            <div class="unb-area">
+                <button type="button" class="btn-tv-schedule popup-opener" aria-controls="popupSchedule" aria-haspopup="dialog" title="홈쇼핑일정"></button>
+                <a href="http://www.everybotmall.com/" target="_blank" class="unb-shop" title="새창열기">
+                    <i class="ico ico-buy"></i>
+                    <span class="label-txt">쇼핑몰</span>
+                    <span class="label-ico"><i class="ico ico-go"></i></span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript">
+        window._rblq = window._rblq || [];
+        _rblq.push(['setVar','cuid','16214e06-5fc9-4ca4-a0ec-3e14fd3d7d56']);
+        _rblq.push(['setVar','device','PW']);
+        _rblq.push(['track','visit']);
+        (function(s,x){s=document.createElement('script');s.type='text/javascript';
+            s.async=true;s.defer=true;s.src=(('https:'==document.location.protocol)?'https':'http')+
+                '://assets.recobell.io/rblc/js/rblc-apne1.min.js';;
+            x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();
+    </script>
+
+    <script type="text/javascript">
+        <!--
+        function createCalendar(){
+        }
+
+        var eventData=[]
+        var nowY;
+        var nowM;
+        var ym;
+        var getProduct=0;
+
+        var calendar ;
+        var setCalandar = function(eventData,ym){
+            var initOption = {};
+
+            if( $(window).width() < 768 ){
+                initOption.defaultView = 'listMonth';
+                initOption.contentHeight = 338;
+            } else{
+                initOption.defaultView = 'dayGridMonth';
+                initOption.contentHeight = 645;
+            }
+
+            var calendarEl = document.getElementById('calendar');
+
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,title,next',
+                    center: '',
+                    right: ''
+                },
+                initialView: initOption.defaultView,
+                //contentHeight: "auto",
+                contentHeight: initOption.contentHeight,
+                locale : "ko",
+                initialDate: ym+'-01',
+                navLinks: false,
+                editable: false,
+                eventLimit: true,
+                dayMaxEvents: true, // allow "more" link when too many events
+                selectable: false,
+                events: eventData,
+                eventDidMount: function(info) {
+                    //console.log(info.event.extendedProps);
+                    // {}
+                }
+            });
+
+            calendar.render();
+        }
+
+
+
+
+        $(document).ready(function(){
+            var dateY = new Date().getFullYear();
+            nowY = dateY;
+
+            var monthD = new Date().getMonth() + 1;
+            nowM = monthD;
+
+            if(monthD<10){
+                monthD = "0"+monthD;
+            }
+            ym = dateY+"-"+monthD;
+
+            $.ajax({
+                url : "/homeShop.asp",
+                aync : false,
+                dataType : "json",
+                data : {
+                    getYear : dateY,
+                    getMonth : monthD,
+                    getProduct : getProduct,
+                    sType : 1
+                },
+                success : function(result){
+                    eventData = result;
+                    calendar=null;
+                    setCalandar(eventData,ym);
+                }
+            })
+
+
+            var wm ;
+            var loadCal=false;
+
+
+            $('#scheduleFilter').change(function(){
+                var val = $(this).val();
+                getProduct= val;
+
+                $.ajax({
+                    url : "/homeShop.asp",
+                    aync : false,
+                    dataType : "json",
+                    data : {
+                        getYear : dateY,
+                        getMonth : monthD,
+                        getProduct : getProduct,
+                        sType : 1
+                    },
+                    success : function(result){
+                        eventData = result;
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                    }
+                })
+            });
+
+            if($(window).width()<768){
+                wm ="m";
+            }else{
+                wm ="w";
+            }
+
+            $(window).resize(function(){
+                if( $(window).width() < 768 ){
+                    if(wm=="w"){
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                        wm="m";
+                    }
+                } else {
+                    if(wm=="m"){
+                        calendar=null;
+                        setCalandar(eventData,ym);
+                        wm="w";
+                    }
+                }
+            });
+
+        });
+
+
+
+
+
+        //-->
+    </script>
     <!-- e: Header -->
 
     <!-- s: Aside -->
-    <!--#Include Virtual="/includes/aside.asp"-->
+    <!-- s: Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <p class="signature">EVERYDAY, EVERYBOT</p>
+            <p class="logo"><a href="/main.asp">Everybot</a></p>
+        </div>
+        <div class="sidebar-container">
+            <nav class="mnb">
+                <ul>
+                    <li class="has-expand is-active">
+                        <a href="/pages/everybot/introduce1.asp">에브리봇</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/everybot/technic1.asp">기술력</a></li>
+                                <li><a href="/pages/everybot/rnd1.asp">연구개발</a></li>
+                                <li><a href="/pages/everybot/introduce1.asp">회사소개</a></li>
+                                <li><a href="/pages/recruit/recruit1.asp">인재채용</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-expand">
+                        <a href="/pages/product/product_all.asp">제품</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/product/product_all.asp">제품전체보기</a></li>
+                                <li><a href="/pages/product/water_cleaners1.asp" class="no-active">물걸레로봇청소기</a>
+                                    <div class="node3-menu">
+                                        <ul>
+                                            <li><a href="/pages/product/water_cleaners4.asp">쓰리스핀</a></li>
+                                            <!-- <li><a href="https://m.everybotmall.com/goods/goods_view.php?goodsNo=1000000151#detail_top" target="_blank">쓰리스핀</a></li> -->
+                                            <li><a href="/pages/product/water_cleaners3.asp">엣지</a></li>
+                                            <li><a href="/pages/product/water_cleaners2.asp">RS700</a></li>
+                                            <li><a href="/pages/product/water_cleaners1.asp">RS500N</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="/pages/product/normal_cleaners3.asp" class="no-active">로봇청소기</a>
+                                    <div class="node3-menu">
+                                        <ul>
+                                            <li><a href="/pages/product/normal_cleaners3.asp">3i</a></li>
+                                            <li><a href="/pages/product/normal_cleaners4.asp" target="_balnk">3iPOP</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-expand">
+                        <!-- <a href="/pages/invest/ir_list.asp">투자정보</a> -->
+                        <a href="https://everybot.irpage.co.kr">투자정보</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="https://everybot.irpage.co.kr" target="_blank">투자정보</a></li>
+                            </ul>
+                        </div>
+                        <!-- <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/invest/money_list.asp">경영정보</a></li>
+                                <li class="dv-pc-only"><a href="/pages/invest/stock_list.asp">주가정보</a></li>
+                                <li><a href="/pages/invest/issue_list.asp">공시현황</a></li>
+                                <li><a href="/pages/invest/ir_list.asp">투자자 공고사항</a></li>
+                            </ul>
+                        </div> -->
+                    </li>
+                    <li class="has-expand">
+                        <a href="/pages/newsroom/notice_list.asp">뉴스룸</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/newsroom/notice_list.asp">공지사항</a></li>
+                                <li><a href="/pages/newsroom/news_list.asp">에브리봇 소식</a></li>
+                                <li><a href="/pages/newsroom/promotion_list.asp">홍보관</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-expand">
+                        <a href="/pages/cs/faq.asp">고객지원</a>
+                        <div class="node2-menu">
+                            <ul>
+                                <li><a href="/pages/cs/shop_search.asp">매장찾기</a></li>
+                                <li><a href="/pages/cs/cs1.asp">사용가이드</a>
+                                <li><a href="/pages/cs/faq.asp">FAQ</a>
+                                    <!--
+                                    <div class="node3-menu">
+                                        <ul>
+                                            <li><a href="/pages/cs/cs1.asp">가이드</a></li>
+                                            <li><a href="/pages/cs/cs2.asp">메뉴얼</a></li>
+                                        </ul>
+                                    </div>
+                                    -->
+                                </li>
+                                <li><a href="/pages/cs/as.asp">A/S접수</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-closer">
+            <button type="button" class="btn" title="사이드메뉴 닫기" aria-controls="sidebar" aria-expanded="true" onclick="ui.sidebar('sidebar', 'close')"><span><i class="ico ico-close">닫기</i></span></button>
+        </div>
+    </aside>
+    <!-- e: Sidebar -->
     <!-- e: Aside -->
 
     <!-- s: Container -->
@@ -179,7 +576,156 @@
     <!-- e: Container -->
 
     <!-- s: Footer -->
-    <!--#Include Virtual="/includes/footer.asp"-->
+
+    <footer class="footer">
+        <div class="notice-area in-sec">
+
+            <dl>
+                <dt>공지</dt>
+                <dd><a href="/pages/newsroom/notice_view.asp?iBDNo=23">에브리봇 개인정보처리방침</a></dd>
+            </dl>
+
+        </div>
+        <div class="info-area in-sec">
+            <div class="grid flex-wrap cross-center flex-between">
+                <div class="logo-area">
+                    <p class="logo"><a href="/"><span role="text">EVERYBOT</span></a></p>
+                </div>
+                <div class="tel-area">
+                    <p class="tel"><i class="ico ico-tel"></i><span>고객센터</span><em>070-4938-7920</em></p>
+                </div>
+            </div>
+            <div class="fnb-area">
+                <ul class="fnb grid flex-wrap cross-center">
+                    <li><a href="/pages/everybot/introduce1.asp">회사소개</a></li>
+                    <!--
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#">이용안내</a></li>
+                    -->
+                    <li><a href="/pages/cs/as.asp">A/S접수</a></li>
+                    <li>
+                        <form
+                            method="POST"
+                            action="https://www.everybot.co.kr/pages/newsroom/notice_view.asp"
+                        >
+                            <input type="hidden" name="iBDNo" value="23" />
+                            <input type="hidden" name="iBlock" value="1" />
+                            <input type="hidden" name="iPage" value="1" />
+                            <button type="submit" style="font-size: 15px;">개인정보 처리방침</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="address-area">
+                <!--
+                <div class="addr-sec1">
+                    <address class="dis-ib">경기도 성남시 분당구 운중로 243번길 4-7 에브리봇 빌딩</address>
+                    <span class="dv-mo-only dis-b">영업/제휴 문의 : <a href="tel:070-4913-8806">070-4913-8806</a></span>
+                    <span>A/S 문의 : <a href="tel:070-4938-7920">070-4938-7920</a> <span class="dv-pc-only"><a href="mailto:as@everybot.net">(as@everybot.net)</a></span></span>
+                    <span class="dv-pc-only">영업/제휴 문의 : <a href="tel:070-4913-8806">070-4913-8806</a> <a href="mailto:product@everybot.net">(product@everybot.net)</a></span>
+                </div>
+                -->
+                <div class="addr-sec1">
+                    <address class="dis-ib">경기도 성남시 분당구 판교공원로2길 11 에브리봇 빌딩</address>
+                    <span class="dv-mo-only dis-b">영업/제휴 문의 : <a href="tel:070-4913-8806">070-4913-8806</a></span>
+                    <span class="dv-mo-only">A/S 문의 : <a href="tel:070-4938-7920">070-4938-7920</a></span>
+                    <span class="dv-pc-only">A/S 문의 : 070-4938-7920 <span><a href="mailto:as@everybot.net">(as@everybot.net)</a></span></span>
+                    <span class="dv-pc-only">영업/제휴 문의 : 070-4913-8806 <a href="mailto:product@everybot.net">(product@everybot.net)</a></span>
+                </div>
+                <div class="addr-sec2">
+                    <span>상호명 : 에브리봇(주)</span>
+                    <span>대표이사 : 정우철</span>
+                    <span>통신판매업신고번호 : 제2017-성남분당-1082호</span>
+                    <span>사업자등록번호 : 129-86-92106 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1298692106" class="foot-comp-btn" target="_blank">사업자번호조회</a></span>
+                    <span>개인정보관리자 : 황민수</span>
+                </div>
+                <p class="copyright">COPYRIGHT 2019 EVERYBOT. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="sns-area">
+                <ul class="sns">
+                    <li><a href="https://blog.naver.com/everybot/" target="_blank" class="btn btn-sns"><span><i class="ico ico-blog"></i></span></a></li>
+                    <li><a href="https://www.instagram.com/everybot_official" target="_blank" class="btn btn-sns"><span><i class="ico ico-insta"></i></span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UC1m9bsSnFnjlTrnk7B2o0fA" target="_blank" class="btn btn-sns"><span><i class="ico ico-youtube"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="dimmer" hidden></div>
+
+    <!-- s: homeshopping popup -->
+    <div id="popupSchedule" class="popup-wrap popup-schedule" role="dialog" aria-modal="true" aria-labelledby="popupBasicTitle1" aria-describedby="">
+        <div class="popup popup-basic popup-style2">
+            <div class="popup-focus" role="text"></div>
+            <div class="popup-inner">
+                <!-- s: 본문영역 -->
+                <div class="popup-header">
+                    <h3 id="popupBasicTitle1">에브리봇 홈쇼핑 일정표</h3>
+                </div>
+                <div class="popup-container">
+                    <div id="calendar"></div>
+
+                    <div class="select-wrap">
+                        <select name="scheduleFilter" id="scheduleFilter" title="제품 전체" class="select">
+                            <option value="0" >제품 전체</option>
+                            <option value="5" >3i POP</option>
+                            <option value="1" >EDGE</option>
+                        </select>
+                    </div>
+
+                    <div class="legend">
+                        <span><span class="square broad"></span>확정</span>
+                        <span><span class="square pro-broad"></span>가편성</span>
+                    </div>
+                </div>
+                <!-- e: 본문영역 -->
+                <button type="button" class="btn popup-closer" aria-controls="popupSchedule" title="에브리봇 홈쇼핑 일정표 팝업닫기" onclick="ui.popup('popupSchedule', this, 'close')"><span>Close</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- e: homeshopping popup -->
+    <script>
+        setTimeout(function(){
+            $('#popupSchedule').removeClass('is-active');
+        },300);
+
+        setTimeout(function(){
+            $('#popupSchedule').css('z-index','-1');
+        },600);
+    </script>
+
+    <script type="text/javascript">
+        window._rblq = window._rblq || [];
+        _rblq.push(['setVar','cuid','16214e06-5fc9-4ca4-a0ec-3e14fd3d7d56']);
+        _rblq.push(['setVar','device','PW']);
+        _rblq.push(['track','visit']);
+        (function(s,x){s=document.createElement('script');s.type='text/javascript';
+            s.async=true;s.defer=true;s.src=(('https:'==document.location.protocol)?'https':'http')+
+                '://assets.recobell.io/rblc/js/rblc-apne1.min.js';;
+            x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();
+    </script>
+    <!-- Mirae Log Analysis Script Ver 1.0   -->
+    <script TYPE="text/javascript">
+        var mi_adkey = "pjtee";
+        var mi_is_defender = "";
+        var mi_dt=new Date(),mi_y=mi_dt.getFullYear(),mi_m=mi_dt.getMonth()+1,mi_d=mi_dt.getDate(),mi_h=mi_dt.getHours();
+        var mi_date=""+mi_y+(mi_m<=9?"0":"")+mi_m+(mi_d<=9?"0":"")+mi_d+(mi_h<=9?"0":"")+mi_h;
+        var mi_script = "<scr"+"ipt "+"type='text/javascr"+"ipt' src='//log1.toup.net/mirae_log.js?t="+mi_date+"' charset='utf-8' async='true'></scr"+"ipt>";
+        document.writeln(mi_script);
+    </script>
+    <!-- Mirae Log Analysis Script END  -->
+    <!-- NAVER SCRIPT START -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add={};
+        wcs_add["wa"] = "s_2d9e65dc1463";
+        if (!_nasa) var _nasa={};
+        wcs.inflow();
+        wcs_do(_nasa);
+    </script>
+    <!-- NAVER SCRIPT END -->
+
     <!-- e: Footer -->
 </div>
 </body>
