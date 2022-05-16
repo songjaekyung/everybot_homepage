@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script type="text/javascript">
+        jQuery(document).ready(function(e){
+            setMnb(0);
+        });
+    </script>
+</head>
+<body class="sub-body">
+<div class="wrapper">
+    <!-- s: SkipNav -->
+    <div class="skipNav">
+        <a href="#content">본문 바로가기</a>
+    </div>
+    <!-- e: SkipNav -->
+
+    <!-- s: Header -->
+    <!--#Include Virtual="/includes/header.asp"-->
+    <!-- e: Header -->
+
+    <!-- s: Aside -->
+    <!--#Include Virtual="/includes/aside.asp"-->
+    <!-- e: Aside -->
+
+    <!-- s: Container -->
+    <div class="container">
+        <!-- s: Content -->
+        <main id="content" class="content company-wrap">
+            <div class="content-header">
+                <div class="in-sec">
+                    <div class="sub-tit-area">
+                        <h2 class="tit">회사소개</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="sub-cate-area">
+                    <nav class="sub-cate">
+                        <ul class="pc-sub">
+                            <li class="on" aria-current="page"><a href="/pages/everybot/introduce1.asp"><span>경영이념</span></a></li>
+                            <li><a href="/pages/everybot/introduce2.asp"><span>사업영역</span></a></li>
+                            <li><a href="/pages/everybot/introduce3.asp"><span>수상내역</span></a></li>
+                            <li><a href="/pages/everybot/introduce4.asp"><span>네트워크</span></a></li>
+                            <li><a href="/pages/everybot/introduce5.asp"><span>연혁</span></a></li>
+                            <li><a href="/pages/everybot/location.asp"><span>오시는길</span></a></li>
+                        </ul>
+                        <div class="mo-sub">
+                            <div class="select-cate">
+                                <button type="button" class="btn" aria-expanded="false" aria-haspopup="menu"><span>경영이념</span></button>
+                                <ul hidden id="subCateMenu" role="listbox" class="listbox">
+                                    <li role="option" class="on" aria-current="page"><a href="/pages/everybot/introduce1.asp">경영이념</a></li>
+                                    <li role="option"><a href="/pages/everybot/introduce2.asp">사업영역</a></li>
+                                    <li role="option"><a href="/pages/everybot/introduce3.asp">수상내역</a></li>
+                                    <li role="option"><a href="/pages/everybot/introduce4.asp">네트워크</a></li>
+                                    <li role="option"><a href="/pages/everybot/introduce5.asp">연혁</a></li>
+                                    <li role="option"><a href="/pages/everybot/location.asp">오시는길</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <section class="company-introduce1-sec cont-style1 in-sec">
+                    <ul class="step-depth1">
+                        <li>
+                            <dl>
+                                <dt>경영이념</dt>
+                                <dd>
+                                    에브리봇은 창의적이고 혁신적인 마인드로 <br class="dv-mo-only">최상의 제품과 서비스를 제공하고, <br class="dv-pc-only">
+                                    사회와 소통하며 <br class="dv-mo-only">지속적으로 발전하는 기업입니다.
+                                </dd>
+                            </dl>
+                            <ul class="grid flex-between">
+                                <li>
+                                    <i class="ideology ico-ideology01"></i>
+                                    <dl>
+                                        <dt>고객 중심 경영</dt>
+                                        <dd>
+                                            <p>고객을 먼저 생각하고 최상의 서비스를 제공합니다.</p>
+                                            <p class="mt_only">고객의 의견을 수렴하고 고객 만족을 최우선으로
+                                                노력합니다.</p>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <i class="ideology ico-ideology02"></i>
+                                    <dl>
+                                        <dt>소통 경영</dt>
+                                        <dd>
+                                            <p>단단한 결속력을 바탕으로 최고의 가치를
+                                                창출합니다.</p>
+                                            <p class="mt_only">사회와의 소통을 통해 상생과 동반성장을
+                                                실천합니다.</p>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <i class="ideology ico-ideology03"></i>
+                                    <dl>
+                                        <dt>스마트 경영</dt>
+                                        <dd>
+                                            <p>창의적이고 혁신적인 마인드를 배양합니다.</p>
+                                            <p class="mt_only">스마트한 업무환경 구축을 통해 미래 경쟁력을
+                                                확보합니다.</p>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>MISSION</dt>
+                                <dd>
+                                    <span class="txt-mission01">기술을 뽐내기 위한 제품이 아닌</span>
+                                    <span class="txt-mission02">“고객을 만족시키는 제품을 만들자”</span>
+                                    <span class="txt-mission03">
+										<span class="dis-b-pc">에브리봇은 세계 3대 홈서비스 로봇 전문회사를 목표로 지속적인 기술개발과 신제품을 출시할 것입니다.</span>
+										<span class="dis-b-pc">더 나아가 더 좋은 제품개발로 인류 복지향상에 공헌하겠다는 큰 목표를 가지고 막중한 책무와 소명을 다할 것입니다.</span>
+									</span>
+                                    <div class="img-area">
+                                        <img src="/images/everybot/img_mission01.jpg" alt="MISSION 이미지">
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>VISION</dt>
+                                <dd>
+                                    <!--<p>
+                                        글로벌 홈 서비스 로봇 브랜드<br>
+                                        4차 산업혁명을 선도하는 로봇기업 에브리봇
+                                    </p>-->
+                                    <p>
+                                        글로벌 홈 서비스 로봇 브랜드<br>
+                                        4차 산업혁명을 선도하는 로봇전문기업 에브리봇
+                                    </p>
+                                    <ul class="step-depth2">
+                                        <li>
+                                            <dl>
+                                                <dt><i class="ico ico-mission01"></i>High Technology Robot</dt>
+                                                <dd>
+                                                    <span class="dis-ib">세계 최고 수준의 자율주행 로봇</span>
+                                                    <span class="dis-ib">기술을 보유하고 있습니다.</spa n>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt><i class="ico ico-mission02"></i>IoT Home Service</dt>
+                                                <dd>
+                                                    <span class="dis-ib">IoT 기술과 로봇 기술의 융합을 통해</span>
+                                                    <span class="dis-ib">진정한 IOT 스마트 홈 서비스를</span><br>
+                                                    <span class="dis-ib">실현합니다.</span>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt><i class="ico ico-mission03"></i>Global Innovation</dt>
+                                                <dd>
+                                                    <span class="dis-ib">4차 산업혁명을 이끌어갈</span>
+                                                    <span class="dis-ib">첨단 IoT 로봇 기술을 선도합니다.</span>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <!-- e: Content -->
+    </div>
+    <!-- e: Container -->
+
+    <!-- s: Footer -->
+    <!--#Include Virtual="/includes/footer.asp"-->
+    <!-- e: Footer -->
+</div>
+</body>
+</html>

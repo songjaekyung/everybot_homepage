@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-     return render_template('index2.html')
+     return render_template('index.html')
 
 @app.route('/introduce')
 def introduce():
-    return render_template('index.html')
+    return render_template('introduce.html')
 
 if __name__ == '__main__':
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
